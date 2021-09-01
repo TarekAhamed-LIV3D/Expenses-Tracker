@@ -1,5 +1,5 @@
-name: costtracker
-description: A new Flutter project.
+name: cost_tracker
+description: Simple cost tracking system.
 
 # The following line prevents the package from being accidentally published to
 # pub.dev using `pub publish`. This is preferred for private packages.

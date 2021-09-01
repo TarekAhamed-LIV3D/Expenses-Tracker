@@ -99,25 +99,9 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     final mediaQuery = MediaQuery.of(context);
     final isLandscape = mediaQuery.orientation == Orientation.landscape;
-    final PreferredSizeWidget appBar = Platform.isIOS
-        ? CupertinoNavigationBar(
-            middle: Text(
+    final PreferredSizeWidget appBar =  AppBar(
+            title: Text(
               'Personal Expenses',
-            ),
-            trailing: Row(
-              children: <Widget>[
-                IconButton(
-                  icon: Icon(Icons.add),
-                  onPressed: () => _startAddNewTransaction(context),
-                ),
-              ],
-            ),
-          )
-        : AppBar(
-            title: Center(
-              child: Text(
-                'Personal Expenses',
-              ),
             ),
             actions: <Widget>[
               IconButton(
@@ -180,12 +164,7 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
     );
 
-    return Platform.isIOS
-        ? CupertinoPageScaffold(
-            child: pageBody,
-            navigationBar: appBar,
-          )
-        : Scaffold(
+    return Scaffold(
             appBar: appBar,
             body: pageBody,
             floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
